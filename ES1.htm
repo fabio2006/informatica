@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Printing</title>
+</head>
+<body>
+  <input type="number" id="numberInput">
+  <button onclick="printNumbers()">Print Numbers</button>
+  <div id="output"></div>
+  <script>
+    function printNumbers() {
+      var inputNumber = parseInt(document.getElementById('numberInput').value);
+      var outputDiv = document.getElementById('output');
+      for (var i = 1; i <= inputNumber; i++) {
+        outputDiv.innerHTML += i + '<br>';
+      }
+      var tenPercent = Math.round(inputNumber * 0.1);
+      outputDiv.innerHTML += tenPercent;
+    }
+  </script>
+</body>
+</html>
