@@ -1,48 +1,65 @@
+
+
+SCOZZARI MANUEL
+manuel.scozzari@jcmaxwell.it
+10:37 CET
+AGGIORNAMENTO SULLO SPAZIO:
+LA CRONOLOGIA È ATTIVA
+I messaggi inviati quando la cronologia è attivata vengono salvati
+Oggi
+SCOZZARI MANUEL
+,
+Ora
+,
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadrati</title>
     <style>
-        .square {
-            width: 10px;
-            height: 10px;
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .quadrato {
+            width: 40px;
+            height: 40px;
             margin: 2px;
+            border: 2px solid black;
             display: inline-block;
         }
 
-        .even {
-            background-color: lightgrey;
-            border: 1px solid black;
+        .pari {
+            background-color: #ddd;
         }
 
-        .odd {
-            background-color: darkgrey;
-            border: 1px solid black;
+        .dispari {
+            background-color: #666;
         }
     </style>
 </head>
 <body>
-    <div id="container"></div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var container = document.getElementById("container");
-
-            for (var i = 1; i <= 100; i++) {
-                var square = document.createElement("div");
-                square.className = "square " + (i % 2 === 0 ? "even" : "odd");
-
-                container.appendChild(square);
+        document.addEventListener("DOMContentLoaded", function () {
+            for (let i = 1; i <= 100; i++) {
+                let quadrato = document.createElement("div");
+                quadrato.className = "quadrato " + (i % 2 === 0 ? "pari" : "dispari");
+                document.body.appendChild(quadrato);
 
                 if (i % 10 === 0) {
-                    // Add a line break after every 10 squares
-                    container.appendChild(document.createElement("br"));
+                    document.body.appendChild(document.createElement("br"));
                 }
             }
         });
     </script>
+
 </body>
 </html>
+Messaggio letto da SCOZZARI MANUEL
+
+,Ora,
+Richiesta chat
+SCOZZARI MANUEL vuole contattarti
