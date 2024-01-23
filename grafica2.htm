@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creazione di div dinamici</title>
+    <style>
+        .custom-div {
+            width: 10px;
+            height: 10px;
+            border: 1px solid #000;
+            display: inline-block;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <label for="numeroDiv">Inserisci un numero:</label>
+    <input type="number" id="numeroDiv" min="1">
+    <button onclick="creaDiv()">Crea Div</button>
+
+    <script>
+        function creaDiv() {
+            // Ottieni il numero inserito dall'utente
+            var numeroDiv = document.getElementById('numeroDiv').value;
+
+            // Assicurati che sia un numero valido e maggiore di 0
+            if (isNaN(numeroDiv) || numeroDiv <= 0) {
+                alert("Inserisci un numero valido e maggiore di 0.");
+                return;
+            }
+
+            // Ottieni il contenitore dove inserire i div
+            var container = document.body;
+
+            // Ciclo for per creare i div
+            for (var i = 0; i < numeroDiv; i++) {
+                // Crea un nuovo elemento div
+                var nuovoDiv = document.createElement('div');
+
+                // Aggiungi la classe personalizzata per lo stile
+                nuovoDiv.classList.add('custom-div');
+
+                // Colora il div come si vuole (ad esempio, colore casuale)
+                var coloreCasuale = '#' + Math.floor(Math.random()*16777215).toString(16);
+                nuovoDiv.style.backgroundColor = coloreCasuale;
+
+                // Aggiungi il div al contenitore
+                container.appendChild(nuovoDiv);
+            }
+        }
+    </script>
+</body>
+</html>
