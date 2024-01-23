@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quadrati</title>
-  <style>
-    .square {
-      width: 10px;
-      height: 10px;
-      margin: 2px;
-      display: inline-block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrati</title>
+    <style>
+        .square {
+            width: 10px;
+            height: 10px;
+            margin: 2px;
+            display: inline-block;
+        }
+
+        .even {
+            background-color: lightgrey;
+            border: 1px solid black;
+        }
+
+        .odd {
+            background-color: darkgrey;
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
+    <div id="container"></div>
 
-<script>
-  for (let i = 1; i <= 100; i++) {
-    let squareColor = (i % 2 === 0) ? 'lightgrey' : 'darkgrey';
-    let square = `<div class="square" style="background-color: ${squareColor}; border: 1px solid black;"></div>`;
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var container = document.getElementById("container");
 
-    document.write(square);
+            for (var i = 1; i <= 100; i++) {
+                var square = document.createElement("div");
+                square.className = "square " + (i % 2 === 0 ? "even" : "odd");
 
-    // Vai a capo ogni 10 numeri
-    if (i % 10 === 0) {
-      document.write('<br>');
-    }
-  }
-</script>
+                container.appendChild(square);
 
+                if (i % 10 === 0) {
+                    // Add a line break after every 10 squares
+                    container.appendChild(document.createElement("br"));
+                }
+            }
+        });
+    </script>
 </body>
 </html>
